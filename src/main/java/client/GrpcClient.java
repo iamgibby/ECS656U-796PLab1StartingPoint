@@ -12,16 +12,16 @@ public class GrpcClient {
           .usePlaintext()
           .build();
 
-        MatrixServiceGrpc.MatrixServiceBlockingStub stub 
+        MatrixServiceGrpc.MatrixServiceBlockingStub stub
           = MatrixServiceGrpc.newBlockingStub(channel);
 
-	int A[][] = { {1, 2, 3, 4}, 
-                {5, 6, 7, 8}, 
+	int A[][] = { {1, 2, 3, 4},
+                {5, 6, 7, 8},
                 {9, 10, 11, 12},
-                {13, 14, 15, 16}}; 
+                {13, 14, 15, 16}};
 
-	int B[][] = { {1, 2, 3, 4}, 
-          {5, 6, 7, 8}, 
+	int B[][] = { {1, 2, 3, 4},
+          {5, 6, 7, 8},
           {9, 10, 11, 12},
           {13, 14, 15, 16}};
 	MatrixReply A3M1=stub.multiplyBlock(MatrixRequest.newBuilder()//First Result Block Calculation
@@ -150,5 +150,6 @@ public class GrpcClient {
 	System.out.println(C3.getC00()+" "+C3.getC01()+" "+D3.getC00()+" "+D3.getC01());
 	System.out.println(C3.getC10()+" "+C3.getC11()+" "+D3.getC10()+" "+D3.getC11());
         channel.shutdown();
+        System.out.println(C3.getC01());
     }
 }
