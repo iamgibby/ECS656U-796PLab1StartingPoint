@@ -23,7 +23,7 @@ public class MatrixServiceImpl extends MatrixServiceImplBase
     	public void multiplyBlock(MatrixRequest request, StreamObserver<MatrixReply> reply)
     	{
         	System.out.println("Request received from client:\n" + request);
-					int C00=request.getA00()*request.getB00()+request.getA01()*request.getB10();//good
+					int C00=request.getA00()*request.getB00()+request.getA10()*request.getB01();//good
 					int C01=request.getA01()*request.getB00()+request.getA11()*request.getB01();//good
 					int C10=request.getA00()*request.getB10()+request.getA10()*request.getB11();//good
 					int C11=request.getA01()*request.getB10()+request.getA11()*request.getB11();
